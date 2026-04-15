@@ -1,8 +1,4 @@
 {
-    "title": "LinkedIn Jobs Actor Input",
-    "type": "object",
-    "schemaVersion": 1,
-    "description": "Configure which LinkedIn job listings to scrape, and optionally filter the results.",
     "properties": {
         "urls": {
             "title": "LinkedIn Jobs Search URLs",
@@ -18,19 +14,22 @@
             "type": "integer",
             "default": 100,
             "minimum": 1,
-            "maximum": 5000
+            "maximum": 5000,
+            "editor": "number"
         },
         "scrapeCompany": {
             "title": "Scrape company details",
             "description": "Fetch full company metadata for each job (requires extra HTTP requests; slower).",
             "type": "boolean",
-            "default": true
+            "default": true,
+            "editor": "checkbox"
         },
         "splitByLocation": {
             "title": "Split search by city",
             "description": "Break the search into per-city queries to bypass LinkedIn's ~1 000-result cap.",
             "type": "boolean",
-            "default": false
+            "default": false,
+            "editor": "checkbox"
         },
         "splitCountry": {
             "title": "Country to split by",
@@ -42,19 +41,21 @@
         "filterKeyword": {
             "title": "Post-filter: keyword",
             "description": "Keep only jobs whose title or description contains this keyword (case-insensitive). Leave blank to keep all.",
-            "type": "string"
+            "type": "string",
+            "editor": "textfield" 
         },
         "filterLocation": {
             "title": "Post-filter: location",
             "description": "Keep only jobs whose location contains this string (case-insensitive). Leave blank to keep all.",
-            "type": "string"
+            "type": "string",
+            "editor": "textfield"
         },
         "filterDatePostedDays": {
             "title": "Post-filter: posted within N days",
             "description": "Keep only jobs posted within this many days. Leave blank to keep all.",
             "type": "integer",
-            "minimum": 1
+            "minimum": 1,
+            "editor": "number"
         }
-    },
-    "required": ["urls"]
+    }
 }

@@ -1,0 +1,60 @@
+{
+    "title": "LinkedIn Jobs Actor Input",
+    "type": "object",
+    "schemaVersion": 1,
+    "description": "Configure which LinkedIn job listings to scrape, and optionally filter the results.",
+    "properties": {
+        "urls": {
+            "title": "LinkedIn Jobs Search URLs",
+            "description": "One or more LinkedIn Jobs search URLs. Open linkedin.com/jobs/search in a browser, apply your filters, then copy the full URL from the address bar.",
+            "type": "array",
+            "items": { "type": "string" },
+            "editor": "stringList",
+            "prefill": ["https://www.linkedin.com/jobs/search/?position=1&pageNum=0"]
+        },
+        "count": {
+            "title": "Max jobs to scrape",
+            "description": "Upper limit on the number of job listings to fetch from LinkedIn.",
+            "type": "integer",
+            "default": 100,
+            "minimum": 1,
+            "maximum": 5000
+        },
+        "scrapeCompany": {
+            "title": "Scrape company details",
+            "description": "Fetch full company metadata for each job (requires extra HTTP requests; slower).",
+            "type": "boolean",
+            "default": true
+        },
+        "splitByLocation": {
+            "title": "Split search by city",
+            "description": "Break the search into per-city queries to bypass LinkedIn's ~1 000-result cap.",
+            "type": "boolean",
+            "default": false
+        },
+        "splitCountry": {
+            "title": "Country to split by",
+            "description": "Required when 'Split search by city' is enabled. Two-letter ISO country code.",
+            "type": "string",
+            "editor": "select",
+            "enum": ["US","CA","MX","GB","DE","FR","NL","CH","SE","NO","DK","FI","IE","ES","IT","PT","BE","AT","PL","CZ","RO","HU","GR","AU","NZ","IN","SG","AE","BR","AR","CO","ZA","NG","KE","EG","JP","KR","CN","TH","VN","ID","MY","PH"]
+        },
+        "filterKeyword": {
+            "title": "Post-filter: keyword",
+            "description": "Keep only jobs whose title or description contains this keyword (case-insensitive). Leave blank to keep all.",
+            "type": "string"
+        },
+        "filterLocation": {
+            "title": "Post-filter: location",
+            "description": "Keep only jobs whose location contains this string (case-insensitive). Leave blank to keep all.",
+            "type": "string"
+        },
+        "filterDatePostedDays": {
+            "title": "Post-filter: posted within N days",
+            "description": "Keep only jobs posted within this many days. Leave blank to keep all.",
+            "type": "integer",
+            "minimum": 1
+        }
+    },
+    "required": ["urls"]
+}

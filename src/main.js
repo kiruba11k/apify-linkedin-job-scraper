@@ -54,7 +54,7 @@ try {
     }
 
     if (!APIFY_TOKEN) {
-        throw new Error('APIFY_TOKEN environment variable is not set. Add it in the Actor\'s Environment Variables in Apify Console.');
+        throw new Error('APIFY_TOKEN environment variable is not set.');
     }
 
     // 2. Build payload for the underlying scraper

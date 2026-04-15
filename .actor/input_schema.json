@@ -1,4 +1,7 @@
 {
+    "lexiconVersion": 1,
+    "title": "LinkedIn Jobs Scraper Input",
+    "type": "object",
     "properties": {
         "urls": {
             "title": "LinkedIn Jobs Search URLs",
@@ -57,5 +60,6 @@
             "minimum": 1,
             "editor": "number"
         }
-    }
+    },
+    "required": ["urls"]
 }

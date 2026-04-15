@@ -1,0 +1,16 @@
+{
+    "actorSpecification": 1,
+    "name": "linkedin-jobs-actor",
+    "title": "LinkedIn Jobs Scraper ",
+    "description": "Linkedin-jobs-scraper with optional keyword, location, and date filters plus a scrape timestamp on every result.",
+    "version": "1.0",
+    "input": "./input_schema.json",
+    "dockerfile": "./Dockerfile",
+    "environmentVariables": [
+        {
+            "name": "APIFY_TOKEN",
+            "description": "Your Apify API token.",
+            "isSecret": true
+        }
+    ]
+}

@@ -1,7 +1,7 @@
 {
     "name": "linkedin-jobs-actor",
     "version": "1.0.0",
-    "description": "Apify Actor that wraps curious_coder/linkedin-jobs-scraper with extra filtering and enrichment capabilities.",
+    "description": "linkedin-jobs-scraper with extra filtering and enrichment capabilities.",
     "type": "module",
     "main": "src/main.js",
     "scripts": {

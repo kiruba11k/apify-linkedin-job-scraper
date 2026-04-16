@@ -1,14 +1,12 @@
-# Use the official Apify Node.js base image (Node 18 LTS)
-FROM apify/actor-node:18
+# Use Apify's Puppeteer + Chrome base image (Node 18)
+FROM apify/actor-node-puppeteer-chrome:18
 
-# Copy package files first for better Docker layer caching
+# Copy package files and install dependencies
 COPY package*.json ./
+RUN npm install --include=dev
 
-# Install production dependencies only
-RUN npm install --omit=dev
-
-# Copy the rest of the source code
+# Copy source
 COPY . ./
 
-# Set the default command
+# Run the actor
 CMD ["node", "src/main.js"]

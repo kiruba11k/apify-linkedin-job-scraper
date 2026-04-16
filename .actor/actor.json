@@ -1,0 +1,55 @@
+{
+    "actorSpecification": 1,
+    "name": "linkedin-job-scraper",
+    "title": "LinkedIn Job Scraper",
+    "description": "Scrapes LinkedIn job listings with natural-language filters. Extracts title, company, location, description, seniority, apply URL, and more.",
+    "version": "2.0",
+    "buildTag": "latest",
+    "environmentVariables": [],
+    "dockerfile": "./Dockerfile",
+    "storages": {
+        "dataset": {
+            "actorSpecification": 1,
+            "views": {
+                "overview": {
+                    "title": "LinkedIn Jobs",
+                    "transformation": {
+                        "fields": [
+                            "title",
+                            "companyName",
+                            "location",
+                            "postedAt",
+                            "seniorityLevel",
+                            "employmentType",
+                            "jobFunction",
+                            "industries",
+                            "applicantsCount",
+                            "applyUrl",
+                            "url",
+                            "companyLinkedinUrl",
+                            "companyWebsite",
+                            "jobPosterName",
+                            "jobPosterTitle",
+                            "jobPosterProfileUrl",
+                            "descriptionText"
+                        ]
+                    },
+                    "display": {
+                        "component": "table",
+                        "properties": {
+                            "title":           { "label": "Job Title",    "format": "text" },
+                            "companyName":     { "label": "Company",      "format": "text" },
+                            "location":        { "label": "Location",     "format": "text" },
+                            "postedAt":        { "label": "Posted",       "format": "date" },
+                            "seniorityLevel":  { "label": "Seniority",    "format": "text" },
+                            "employmentType":  { "label": "Type",         "format": "text" },
+                            "applicantsCount": { "label": "Applicants",   "format": "text" },
+                            "applyUrl":        { "label": "Apply",        "format": "link" },
+                            "url":             { "label": "LinkedIn URL", "format": "link" }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

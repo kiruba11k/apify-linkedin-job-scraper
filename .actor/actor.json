@@ -1,9 +1,0 @@
-{
-    "actorSpecification": 1,
-    "name": "linkedin-jobs-actor",
-    "title": "LinkedIn Jobs Scraper ",
-    "description": "Backend wrapper for linkedin-jobs-scraper that forwards core search inputs and adds a scrape timestamp to each result.",
-    "version": "1.0",
-    "input": "./input_schema.json",
-    "dockerfile": "./Dockerfile"
-}

@@ -1,5 +1,5 @@
 {
-    "actorSpecification": 1,
+    
     "title": "LinkedIn Job Scraper Input",
     "description": "Configure your LinkedIn job search",
     "type": "object",

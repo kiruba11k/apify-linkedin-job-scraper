@@ -1,0 +1,56 @@
+{
+    "actorSpecification": 1,
+    "title": "LinkedIn Job Scraper Input",
+    "description": "Configure your LinkedIn job search",
+    "type": "object",
+    "schemaVersion": 1,
+    "properties": {
+        "naturalQuery": {
+            "title": "Search Query",
+            "type": "string",
+            "description": "Natural-language job search. You can include filter words like: entry-level, senior, full-time, part-time, contract, remote, hybrid, on-site, past 24 hours, past week, past month. Example: 'entry-level aiml engineer full-time remote posted in the past week'",
+            "editor": "textfield",
+            "default": "software engineer"
+        },
+        "location": {
+            "title": "Location",
+            "type": "string",
+            "description": "City/country for the job search.",
+            "editor": "textfield",
+            "default": "Bangalore, India"
+        },
+        "geoId": {
+            "title": "LinkedIn GeoId (optional)",
+            "type": "string",
+            "description": "LinkedIn numeric geoId for more precise location filtering. Common IDs — Bangalore: 105214831 | Hyderabad: 105556635 | Mumbai: 102713980 | Delhi: 102713980 | Chennai: 102713980 | Remote: 92000000",
+            "editor": "textfield",
+            "default": "105214831"
+        },
+        "pages": {
+            "title": "Pages to scrape",
+            "type": "integer",
+            "description": "Each page yields up to 25 job listings.",
+            "editor": "number",
+            "default": 2,
+            "minimum": 1,
+            "maximum": 40
+        },
+        "delayBetweenJobs": {
+            "title": "Delay between job detail fetches (ms)",
+            "type": "integer",
+            "description": "Milliseconds to wait between fetching individual job pages. Keep at 3000+ to avoid rate-limiting.",
+            "editor": "number",
+            "default": 4000,
+            "minimum": 2000
+        },
+        "delayBetweenPages": {
+            "title": "Delay between listing pages (ms)",
+            "type": "integer",
+            "description": "Milliseconds to wait between fetching search result pages.",
+            "editor": "number",
+            "default": 5000,
+            "minimum": 2000
+        }
+    },
+    "required": ["naturalQuery", "location"]
+}

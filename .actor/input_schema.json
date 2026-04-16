@@ -6,7 +6,7 @@
     "properties": {
         "urls": {
             "title": "LinkedIn Jobs Search URLs",
-            "description": "One or more LinkedIn Jobs search URLs. Open linkedin.com/jobs/search in a browser, apply your filters, then copy the full URL from the address bar.",
+            "description": "One or more LinkedIn Jobs search URLs from the public LinkedIn jobs search page.",
             "type": "array",
             "items": { "type": "string" },
             "editor": "stringList",
@@ -41,25 +41,6 @@
             "type": "string",
             "editor": "select",
             "enum": ["US","CA","MX","GB","DE","FR","NL","CH","SE","NO","DK","FI","IE","ES","IT","PT","BE","AT","PL","CZ","RO","HU","GR","AU","NZ","IN","SG","AE","BR","AR","CO","ZA","NG","KE","EG","JP","KR","CN","TH","VN","ID","MY","PH"]
-        },
-        "filterKeyword": {
-            "title": "Post-filter: keyword",
-            "description": "Keep only jobs whose title or description contains this keyword (case-insensitive). Leave blank to keep all.",
-            "type": "string",
-            "editor": "textfield" 
-        },
-        "filterLocation": {
-            "title": "Post-filter: location",
-            "description": "Keep only jobs whose location contains this string (case-insensitive). Leave blank to keep all.",
-            "type": "string",
-            "editor": "textfield"
-        },
-        "filterDatePostedDays": {
-            "title": "Post-filter: posted within N days",
-            "description": "Keep only jobs posted within this many days. Leave blank to keep all.",
-            "type": "integer",
-            "minimum": 1,
-            "editor": "number"
         }
     },
     "required": ["urls"]

@@ -1,18 +1,18 @@
 {
-    "name": "linkedin-jobs-actor",
-    "version": "1.0.0",
-    "description": "Backend wrapper around linkedin-jobs-scraper with scrape timestamp enrichment.",
+    "name": "linkedin-job-scraper",
+    "version": "2.0.0",
+    "description": "Apify Actor — LinkedIn Job Scraper with natural-language filters",
     "type": "module",
     "main": "src/main.js",
     "scripts": {
-        "start": "node src/main.js",
-        "start:dev": "APIFY_HEADLESS=1 node --experimental-vm-modules src/main.js"
+        "start": "node src/main.js"
+    },
+    "dependencies": {
+        "apify": "^3.2.2",
+        "crawlee": "^3.9.0",
+        "puppeteer": "^22.0.0"
     },
     "engines": {
         "node": ">=18.0.0"
-    },
-    "dependencies": {
-        "apify": "^3.0.0"
-    },
-    "devDependencies": {}
+    }
 }

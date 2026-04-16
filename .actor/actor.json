@@ -5,7 +5,7 @@
     "description": "Scrapes LinkedIn job listings with natural-language filters. Extracts title, company, location, description, seniority, apply URL, and more.",
     "version": "2.0",
     "buildTag": "latest",
-    "environmentVariables": [],
+    "environmentVariables": {},
     "dockerfile": "./Dockerfile",
     "storages": {
         "dataset": {

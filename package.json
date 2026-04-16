@@ -8,11 +8,11 @@
         "start": "node src/main.js"
     },
     "dependencies": {
-        "apify": "^3.2.2",
-        "crawlee": "^3.9.0",
-        "puppeteer": "^22.0.0"
+        "apify": "^3.3.0",
+        "crawlee": "^3.11.0",
+        "puppeteer": "^24.0.0"
     },
     "engines": {
-        "node": ">=18.0.0"
+        "node": ">=20.0.0"
     }
 }
